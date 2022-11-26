@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 	char buffer[64]; 
 
 	modified = 0;
-	fgets(buffer, sizeof(buffer), stdin);
+	gets(buffer);
 	if (modified != 0) {
 		printf("you have changed the 'modified' variable\n");
 	}
