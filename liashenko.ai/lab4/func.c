@@ -2,12 +2,12 @@
 
 
 void make_array_words(char ***arr, char **line, int *cnt) {
-	char *del_word = strtok(*line, " ");
+	char *del_word = strtok(*line, " ,-.:?!");
 	while (del_word != NULL) {
 		(*arr) = realloc((*arr), (*cnt + 1) * sizeof(**arr));
 		(*arr)[*cnt] = del_word;
 		*cnt += 1;
-		del_word = strtok(NULL, " ");
+		del_word = strtok(NULL, " ,-.:?!");
 	}
 	free(del_word);
 }
