@@ -1,3 +1,4 @@
+#include "func.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -8,8 +9,10 @@ int main() {
 	char *line = readline("Enter your string ");
 	char **cnst = NULL;
 	int cnt = 0;
-	printf("\n-------------------------\n");
 
+	make_array_words(&cnst, &line, &cnt);
+	
+	/*
 	char *del_word = strtok(line, " ");
 	while (del_word != NULL) {
 		cnst = realloc(cnst, (cnt + 1) * sizeof(cnst));
@@ -18,7 +21,11 @@ int main() {
 		del_word = strtok(NULL, " ");
 	}
 	free(del_word);
+	*/	
+
+	sort(&cnst, cnt);
 	
+	/*
 	for (int i = cnt - 1; i >= 0; i--) {
 		for (int j = 0; j < i; j++) {
 			if (strlen(cnst[j]) > strlen(cnst[j + 1])) {
@@ -28,11 +35,16 @@ int main() {
 			}
 		}
 	}
+	*/
 
+	print_array(cnst, cnt);
+	
+	/*
 	for (int i = 0; i < cnt; ++i) {
 		printf("%s ", cnst[i]);
 	}
 	printf("\n-------------------------\n");
+	*/
 
 	free(cnst);
 	
